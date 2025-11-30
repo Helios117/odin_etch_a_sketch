@@ -9,6 +9,10 @@ function createGrid(num){
             divNode.classList.add("grid-element");
             divNode.style.width = `${720 / num}px`;
             divNode.style.height = `${720 / num}px`;
+            function changeColor(){
+                divNode.style.backgroundColor = "black";
+            }
+            divNode.addEventListener("mouseover", changeColor)
             divRow.appendChild(divNode);
         }
     }
