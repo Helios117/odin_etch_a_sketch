@@ -10,8 +10,10 @@ function createGrid(num){
             divNode.classList.add("grid-element");
             divNode.style.width = `${480 / num}px`;
             divNode.style.height = `${480 / num}px`;
+            divNode.style.opacity = 0.1;
+            divNode.style.backgroundColor = "black";
             function changeColor(){
-                divNode.style.backgroundColor = "black";
+                divNode.style.opacity = parseFloat(divNode.style.opacity) + 0.2;
             }
             divNode.addEventListener("mouseover", changeColor)
             divRow.appendChild(divNode);
@@ -42,6 +44,6 @@ resetButton.addEventListener("click", () => {
 eraseButton.addEventListener("click", () => {
     const gridElements = document.querySelectorAll(".grid-element");
     gridElements.forEach(element => {
-        element.style.backgroundColor = 'grey';
+        element.style.opacity = 0.1;
     })
 })
